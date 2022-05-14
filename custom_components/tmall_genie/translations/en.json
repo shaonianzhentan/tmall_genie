@@ -1,0 +1,25 @@
+{
+    "title": "天猫精灵",
+    "config": {
+        "step": {
+            "user": {
+                "description": "天猫精灵云云对接",
+                "data": {}
+            }
+        },
+        "error": {},
+        "abort": {}
+    },
+    "options": {
+        "step": {
+            "user": {
+                "description": "没有HTTPS域名，可配置密钥通过第三方服务中转",
+                "data": {
+                    "apiKey": "Client Secret",
+                    "debug": "调试模式"
+                }
+            }
+        },
+        "error": {}
+    }
+}

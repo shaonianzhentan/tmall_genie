@@ -1,0 +1,10 @@
+{
+    "domain": "tmall_genie",
+    "name": "\u5929\u732B\u7CBE\u7075",
+    "version": "1.0.0",
+    "config_flow": true,
+    "documentation": "https://github.com/shaonianzhentan/tmall_genie",
+    "dependencies": [],
+    "codeowners": ["@shaonianzhentan"],
+    "quality_scale": "cloud_polling"
+}
