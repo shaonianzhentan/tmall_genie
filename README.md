@@ -1,4 +1,4 @@
-# tmall_genie
+# Tmall Genie
 天猫精灵云云对接
 
 [![hacs_badge](https://img.shields.io/badge/Home-Assistant-%23049cdb)](https://www.home-assistant.io/)
