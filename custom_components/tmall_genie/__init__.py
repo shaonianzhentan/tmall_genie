@@ -3,12 +3,6 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 import homeassistant.helpers.config_validation as cv
 
-# 授权
-from typing import Optional
-import homeassistant.auth.models as models
-from homeassistant.auth.const import ACCESS_TOKEN_EXPIRATION
-from datetime import timedelta
-
 from .tmall_view import TmallView
 from .const import DOMAIN, PLATFORMS
 
