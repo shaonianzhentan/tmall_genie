@@ -15,7 +15,9 @@ class TmallView(HomeAssistantView):
         data = await request.json()
         
         options = hass.data[DOMAIN]
-        if options.get('debug', False) == True:
+        apiKey = options.get('apiKey')
+        is_debug = options.get('debug', False)
+        if is_debug:
             await hass.services.async_call('persistent_notification', 'create', {
                 'title': '接收信息',
                 'message': json.dumps(data, indent=2)
@@ -25,16 +27,12 @@ class TmallView(HomeAssistantView):
         payload = data['payload']
         name = header['name']
         accessToken = payload['accessToken']
-        # 验证权限
-        token = await hass.auth.async_validate_access_token(accessToken)
-        # 进行自定义服务验证
-        if token is None:
-            voice = hass.data["conversation_voice"]
-            config_data = voice.api_config.get_config()
-            apiKey = config_data.get('apiKey', '')
-            # 判断是否定义apiKey
-            if apiKey != '' and accessToken == f'apiKey{apiKey}':
-                token = accessToken
+
+        token = None
+        # 授权验证
+        if accessToken == f'apiKey{apiKey}':
+            token = accessToken
+
         # 走正常流程
         result = {}
         if token is not None:
@@ -54,7 +52,7 @@ class TmallView(HomeAssistantView):
         header['name'] = name        
         response = {'header': header, 'payload': result}
         
-        if options.get('debug', False) == True:
+        if is_debug:
             await hass.services.async_call('persistent_notification', 'create', {
                 'title': '发送信息',
                 'message': json.dumps(response, indent=2)
