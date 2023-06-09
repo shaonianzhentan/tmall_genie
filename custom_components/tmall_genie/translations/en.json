@@ -13,7 +13,7 @@
     "options": {
         "step": {
             "user": {
-                "description": "没有HTTPS域名，可配置密钥通过第三方服务中转，http://localhost:8123/api/tmallgenie",
+                "description": "没有HTTPS域名，可配置密钥通过第三方服务中转",
                 "data": {
                     "apiKey": "Client Secret",
                     "debug": "调试模式"

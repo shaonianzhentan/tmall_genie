@@ -1,7 +1,7 @@
 {
     "domain": "tmall_genie",
     "name": "\u5929\u732B\u7CBE\u7075",
-    "version": "2022.10.1",
+    "version": "2023.6.9",
     "config_flow": true,
     "documentation": "https://github.com/shaonianzhentan/tmall_genie",
     "dependencies": [],

@@ -13,11 +13,11 @@ _LOGGER = logging.getLogger(__name__)
 area_entity = {}
 async def discoveryDevice(hass):
     # 获取所有区域
-    area = await area_registry.async_get_registry(hass)
+    area = area_registry.async_get(hass)
     area_list = area.async_list_areas()
     for area_item in area_list:
         # 获取区域实体
-        entity = await entity_registry.async_get_registry(hass)
+        entity = entity_registry.async_get(hass)
         entity_list = entity_registry.async_entries_for_area(entity, area_item.id)
         for entity_item in entity_list:
             area_entity.update({
